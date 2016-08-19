@@ -12,8 +12,13 @@ RUN apt-get update && apt-get install -y \
 # Expose port 80 for HTTP and 443 for HTTPS traffic
 EXPOSE 80 443
 
-# Copy the KCS site files over from the Host
-#COPY ./public_html/ /var/www/html/
+# Enable SSL and copy over the config file
+RUN a2enmod ssl
+COPY ./etc/apache2/sites-available/default-ssl.conf /etc/apache2/sites-available/default-ssl.conf
+RUN a2ensite default-ssl.conf
+
+#Default to start a bash shell when the container is run
+CMD ["/bin/bash", "-c", "service apache2 start"]
 
 # Helper commands to run the build and start the container
 
@@ -22,5 +27,5 @@ EXPOSE 80 443
 
 # Docker
 # docker build -t "wallpaper_site" .
-# docker run -itd -e VIRTUAL_HOST=wallpaperexploit.eastus.cloudapp.com --name Wallpaper_Site wallpaper_site:latest /bin/bash
+# docker run -itd -e VIRTUAL_HOST=wallpaperexploit.ddns.net -v /etc/letsencrypt/live/wallpaperexploit.ddns.net:/etc/letsencrypt/live/wallpaperexploit.ddns.net --name Wallpaper_Site wallpaper_site:latest /bin/bash
 # docker exec Wallpaper_Site service apache2 start
