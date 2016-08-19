@@ -18,7 +18,7 @@ COPY default-ssl.conf /etc/apache2/sites-available/default-ssl.conf
 RUN a2ensite default-ssl.conf
 
 #Default to start a bash shell when the container is run
-CMD ["/bin/bash", "-c", "service apache2 start"]
+CMD ["/bin/bash"]
 
 # Helper commands to run the build and start the container
 
