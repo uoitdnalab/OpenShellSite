@@ -14,7 +14,7 @@ EXPOSE 80 443
 
 # Enable SSL and copy over the config file
 RUN a2enmod ssl
-COPY ./etc/apache2/sites-available/default-ssl.conf /etc/apache2/sites-available/default-ssl.conf
+COPY default-ssl.conf /etc/apache2/sites-available/default-ssl.conf
 RUN a2ensite default-ssl.conf
 
 #Default to start a bash shell when the container is run
