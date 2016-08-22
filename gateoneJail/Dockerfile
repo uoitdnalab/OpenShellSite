@@ -48,10 +48,8 @@ RUN mkdir -p $D/etc/ && \
 	chown -R demo:demo $D/home/demo/ && \
 	chmod -R 0700 $D/home/demo/
 
-#Modify the SSH config file to change the demo user's root directory to the jail
-RUN echo "Match User demo" >> /etc/ssh/sshd_config && \
-	echo "ChrootDirectory /home/jails" >> /etc/ssh/sshd_config
-# ForceCommand nc -l -p 10000
+#Cop over the pre-configured SSH config file with the chroot added and port changed to 2222
+COPY sshd_config /etc/ssh/sshd_config
 
 #Default to start a bash shell when the container is run
 CMD ["/bin/bash"]
