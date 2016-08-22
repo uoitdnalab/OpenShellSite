@@ -39,7 +39,7 @@ RUN cp -v /bin/bash $D/bin/ && \
 	/root/jail.sh /bin/nc
 
 #Add the demo user to the container and set its password
-RUN useradd demo && \
+RUN useradd demo --shell /bin/bash && \
 	/bin/bash -c "chpasswd <<< "demo:demopassword""
 
 #Copy the user and group files to the jail and create a home directory	
