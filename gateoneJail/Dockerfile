@@ -35,7 +35,7 @@ RUN cp -v /bin/bash $D/bin/ && \
 
 #Add the demo user to the container and set its password
 RUN useradd demo && \
-	chpasswd <<< "demo:demopassword"
+	/bin/bash -c "chpasswd <<< "demo:demopassword""
 
 #Copy the user and group files to the jail and create a home directory	
 RUN mkdir -p $D/etc/ && \

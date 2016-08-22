@@ -1,3 +1,6 @@
+# Install script to create the two containers and run them
+# Assumes Docker is already installed along with an Nginx proxy container and LetsEncrypt
+# git clone https://github.com/Gunsmithy/WallpaperExploitSite.git && cd WallpaperExploitSite && chmod +x install.sh && ./install.sh
 sudo docker build -t "wallpaper_site" .
 sudo docker run -itd -e VIRTUAL_HOST=wallpaperexploit.ddns.net -p 443:443 --name Wallpaper_Site wallpaper_site:latest
 sudo docker cp --follow-link /etc/letsencrypt/live/wallpaperexploit.ddns.net/cert.pem Wallpaper_Site:/etc/letsencrypt/live/wallpaperexploit.ddns.net/cert.pem
