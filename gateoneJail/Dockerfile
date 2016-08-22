@@ -22,6 +22,7 @@ RUN mkdir -p $D && \
 
 #Copy over the script used to add binaries and their required libraries to the jail
 COPY ./jail.sh /root/jail.sh
+RUN chmod +x /root/jail.sh
 
 #Run the script to add Bash and Netcat and their libraries to the jail
 RUN cp -v /bin/bash $D/bin/ && \
