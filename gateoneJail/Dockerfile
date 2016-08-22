@@ -35,7 +35,7 @@ RUN cp -v /bin/bash $D/bin/ && \
 	cp -v /lib64/ld-linux-x86-64.so.2 $D/lib64/ && \
 	cp -va /lib/x86_64-linux-gnu/libnss_files* $D/lib/x86_64-linux-gnu/ && \
 	cp -v /bin/nc $D/bin/ && \
-	cp -v /lib/x86_64-linux-gnu/{libbsd.so.0,libresolv.so.2} $D/lib/ && \
+	/bin/bash -c "cp -v /lib/x86_64-linux-gnu/{libbsd.so.0,libresolv.so.2} $D/lib/"
 
 #Add the demo user to the container and set its password
 RUN useradd demo --shell /bin/bash && \
