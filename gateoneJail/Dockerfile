@@ -2,7 +2,8 @@
 FROM gateone:latest
 
 #Install Netcat which is needed to create a tunnel listener for the exploit demo
-RUN apt-get install -y netcat
+RUN apt-get update && apt-get install -y \
+netcat
 
 #Expose port 22 for SSH access to the jail
 EXPOSE 22
@@ -39,7 +40,7 @@ RUN useradd demo && \
 
 #Copy the user and group files to the jail and create a home directory	
 RUN mkdir -p $D/etc/ && \
-	cp -vf /etc/{passwd,group} $D/etc/ && \
+	/bin/bash -c "cp -vf /etc/{passwd,group} $D/etc/" && \
 	mkdir -p $D/home/demo && \
 	chown -R demo:demo $D/home/demo/ && \
 	chmod -R 0700 $D/home/demo/
@@ -47,3 +48,4 @@ RUN mkdir -p $D/etc/ && \
 #Modify the SSH config file to change the demo user's root directory to the jail
 RUN echo "Match User demo" >> /etc/ssh/sshd_config && \
 	echo "ChrootDirectory /home/jails" >> /etc/ssh/sshd_config
+# ForceCommand nc -l -p 10000
