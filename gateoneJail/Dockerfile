@@ -3,7 +3,8 @@ FROM gateone:latest
 
 #Install Netcat which is needed to create a tunnel listener for the exploit demo
 RUN apt-get update && apt-get install -y \
-netcat
+	netcat \
+	openssh-server
 
 #Expose port 22 for SSH access to the jail
 EXPOSE 22
