@@ -18,3 +18,9 @@ sudo docker cp --follow-link /etc/letsencrypt/live/wallpaperexploit.ddns.net/pri
 cd ~/WallpaperExploitSite/gateoneJail
 sudo docker build -t gateone_jail .
 sudo docker run -itd --name=Gateone_Jail -p 2222:2222 -p 10000:10000 gateone_jail
+sudo docker exec service ssh restart
+
+cd ~/WallpaperExploitSite/ftp_server
+sudo docker build -t ftp_server .
+sudo docker run -itd -p 2121:2121 -p 21210-21220:21210-21220 --name FTP_Server ftp_server
+sudo docker exec service vsftpd restart

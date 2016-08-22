@@ -48,9 +48,8 @@ RUN mkdir -p $D/etc/ && \
 	chown -R demo:demo $D/home/demo/ && \
 	chmod -R 0700 $D/home/demo/
 
-#Cop over the pre-configured SSH config file with the chroot added and port changed to 2222
+#Copy over the pre-configured SSH config file with the chroot added and port changed to 2222
 COPY sshd_config /etc/ssh/sshd_config
-RUN service ssh restart
 
 #Default to start a bash shell when the container is run
 CMD ["/bin/bash"]

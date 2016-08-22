@@ -38,14 +38,14 @@ of those sections to manage the look and feel of the site. */
     background: #fff;
 }
 
-.about-section {
+.demo-section {
     height: 100%;
     padding-top: 150px;
     text-align: center;
     background: #eee;
 }
 
-.services-section {
+.downloads-section {
     height: 100%;
     padding-top: 150px;
     text-align: center;
@@ -57,4 +57,8 @@ of those sections to manage the look and feel of the site. */
     padding-top: 150px;
     text-align: center;
     background: #eee;
+}
+
+#dylanmail b {
+    display:none;
 }
