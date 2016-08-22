@@ -26,17 +26,16 @@ RUN mkdir -p $D && \
 	chmod 0755 $D && \
 	ls -ld $D && \
 	mkdir -p $D/bin
-	
 
-#Copy over the script used to add binaries and their required libraries to the jail
-COPY ./jail.sh /root/jail.sh
-RUN chmod +x /root/jail.sh
-
-#Run the script to add Bash and Netcat and their libraries to the jail
+#Manually add Bash and Netcat and their libraries to the jail
 RUN cp -v /bin/bash $D/bin/ && \
-	/root/jail.sh /bin/bash && \
+	mkdir -p $D/lib64/ && \
+	mkdir -p $D/lib/x86_64-linux-gnu/ && \
+	cp -v /lib/x86_64-linux-gnu/{libtinfo.so.5,libdl.so.2,libc.so.6} $D/lib/ && \
+	cp -v /lib64/ld-linux-x86-64.so.2 $D/lib64/ && \
+	cp -va /lib/x86_64-linux-gnu/libnss_files* $D/lib/x86_64-linux-gnu/ && \
 	cp -v /bin/nc $D/bin/ && \
-	/root/jail.sh /bin/nc
+	cp -v /lib/x86_64-linux-gnu/{libbsd.so.0,libresolv.so.2} $D/lib/ && \
 
 #Add the demo user to the container and set its password
 RUN useradd demo --shell /bin/bash && \
