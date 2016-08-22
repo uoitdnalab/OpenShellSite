@@ -31,7 +31,7 @@ RUN mkdir -p $D && \
 RUN cp -v /bin/bash $D/bin/ && \
 	mkdir -p $D/lib64/ && \
 	mkdir -p $D/lib/x86_64-linux-gnu/ && \
-	cp -v /lib/x86_64-linux-gnu/{libtinfo.so.5,libdl.so.2,libc.so.6} $D/lib/ && \
+	/bin/bash -c "cp -v /lib/x86_64-linux-gnu/{libtinfo.so.5,libdl.so.2,libc.so.6} $D/lib/" && \
 	cp -v /lib64/ld-linux-x86-64.so.2 $D/lib64/ && \
 	cp -va /lib/x86_64-linux-gnu/libnss_files* $D/lib/x86_64-linux-gnu/ && \
 	cp -v /bin/nc $D/bin/ && \
