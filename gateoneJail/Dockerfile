@@ -1,13 +1,16 @@
-# Build from the previously build gateone Docker image
-FROM gateone:latest
+# Build from the official Ubuntu 14.04 Trusty Tahr Docker image
+FROM ubuntu:14.04
+
+# I am the maintainer - Dylan Kauling
+MAINTAINER dylan.kauling@uoit.net
 
 #Install Netcat which is needed to create a tunnel listener for the exploit demo
 RUN apt-get update && apt-get install -y \
 	netcat \
 	openssh-server
 
-#Expose port 22 for SSH access to the jail
-EXPOSE 22
+#Expose port 2222 for SSH access to the jail and 10000 for the exploit tunnel
+EXPOSE 2222 10000
 
 #Set an environment variable for the location of the jail
 ENV D /home/jails
@@ -50,3 +53,6 @@ RUN mkdir -p $D/etc/ && \
 RUN echo "Match User demo" >> /etc/ssh/sshd_config && \
 	echo "ChrootDirectory /home/jails" >> /etc/ssh/sshd_config
 # ForceCommand nc -l -p 10000
+
+#Default to start a bash shell when the container is run
+CMD ["/bin/bash"]
