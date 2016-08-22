@@ -20,6 +20,9 @@ RUN a2ensite default-ssl.conf
 #Make directory for the certificate and key
 RUN mkdir -p /etc/letsencrypt/live/wallpaperexploit.ddns.net
 
+#Copy the site over to the web directory
+COPY ./public_html/ /var/www/html/
+
 #Default to start a bash shell when the container is run
 CMD ["/bin/bash"]
 
