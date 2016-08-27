@@ -155,7 +155,7 @@ a img{
   width: auto;
   background-color: #f3f3f3;
   background-size: cover;
-  padding-bottom: 50px;
+  padding-bottom: 80px;
 }
 
 .logo-font {
@@ -167,7 +167,7 @@ a img{
 
 .android-slogan {
   font-size: 60px;
-  padding-top: 50px;
+  padding-top: 80px;
 }
 
 .android-sub-slogan {
@@ -220,7 +220,7 @@ a img{
 .demo-section-text {
   margin-left: auto;
   margin-right: auto;
-  padding: 80px 16px 25px 16px;
+  padding: 100px 16px 25px 16px;
 }
 
   .demo-section-text p {
@@ -234,7 +234,7 @@ a img{
 .downloads-section-text {
   margin-left: auto;
   margin-right: auto;
-  padding: 30px 16px 0 16px;
+  padding: 50px 16px 0 16px;
 }
 
 .downloads-section-text p {
@@ -250,7 +250,7 @@ a img{
 .contact-section-text {
   margin-left: auto;
   margin-right: auto;
-  padding: 80px 16px 0 16px;
+  padding: 50px 16px 0 16px;
 }
 
 .contact-section-text p {
