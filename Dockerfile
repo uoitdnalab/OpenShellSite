@@ -18,7 +18,7 @@ COPY default-ssl.conf /etc/apache2/sites-available/default-ssl.conf
 RUN a2ensite default-ssl.conf
 
 #Make directory for the certificate and key
-RUN mkdir -p /etc/letsencrypt/live/wallpaperexploit.ddns.net
+RUN mkdir -p /etc/letsencrypt/live/wallpaper.nextproject.ca
 
 #Copy the site over to the web directory
 COPY ./public_html/ /var/www/html/
