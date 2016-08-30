@@ -18,6 +18,9 @@ RUN useradd ftpdemo && \
 # Create a home directory for the ftpdemo user and chown the files directory inside
 RUN mkdir -p /home/ftpdemo/files && \
 	chown ftpdemo:ftpdemo /home/ftpdemo/files
-	
+
+#Set bash to restart the ftp server when the container is started
+RUN echo "service vsftpd restart" >> /etc/bash.bashrc	
+
 # Default to start a bash shell when the container is run
 CMD ["/bin/bash"]

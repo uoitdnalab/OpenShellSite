@@ -23,6 +23,9 @@ RUN mkdir -p /etc/letsencrypt/live/wallpaper.nextproject.ca
 #Copy the site over to the web directory
 COPY ./public_html/ /var/www/html/
 
+#Set bash to restart the web server when the container is started
+RUN echo "service apache2 restart" >> /etc/bash.bashrc
+
 #Default to start a bash shell when the container is run
 CMD ["/bin/bash"]
 
