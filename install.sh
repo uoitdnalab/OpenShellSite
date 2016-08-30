@@ -6,6 +6,7 @@ sudo docker run -itd -p 80:80 -p 443:443 --name Wallpaper_Site --restart=always 
 sudo docker cp --follow-link /etc/letsencrypt/live/wallpaper.nextproject.ca/cert.pem Wallpaper_Site:/etc/letsencrypt/live/wallpaper.nextproject.ca/cert.pem
 sudo docker cp --follow-link /etc/letsencrypt/live/wallpaper.nextproject.ca/privkey.pem Wallpaper_Site:/etc/letsencrypt/live/wallpaper.nextproject.ca/privkey.pem
 sudo docker cp --follow-link /etc/letsencrypt/live/wallpaper.nextproject.ca/chain.pem Wallpaper_Site:/etc/letsencrypt/live/wallpaper.nextproject.ca/chain.pem
+sudo docker exec Wallpaper_Site service apache2 start
 
 cd ~
 git clone https://github.com/liftoff/GateOne.git # Clone the repo
