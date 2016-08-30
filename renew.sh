@@ -16,5 +16,5 @@ docker cp --follow-link /etc/letsencrypt/live/wallpaper.nextproject.ca/privkey.p
 
 # Start the containers again
 docker start Wallpaper_Site
-docker exec Wallpaper_Site service apache2 start
+docker exec Wallpaper_Site service apache2 restart
 docker start Gateone
