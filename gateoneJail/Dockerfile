@@ -7,7 +7,8 @@ MAINTAINER dylan.kauling@uoit.net
 #Install Netcat which is needed to create a tunnel listener for the exploit demo
 RUN apt-get update && apt-get install -y \
 	netcat \
-	openssh-server
+	openssh-server \
+	screen
 
 #Expose port 2222 for SSH access to the jail and 10000 for the exploit tunnel
 EXPOSE 2222 10000
@@ -35,7 +36,9 @@ RUN cp -v /bin/bash $D/bin/ && \
 	cp -v /lib64/ld-linux-x86-64.so.2 $D/lib64/ && \
 	cp -va /lib/x86_64-linux-gnu/libnss_files* $D/lib/x86_64-linux-gnu/ && \
 	cp -v /bin/nc $D/bin/ && \
-	/bin/bash -c "cp -v /lib/x86_64-linux-gnu/{libbsd.so.0,libresolv.so.2} $D/lib/"
+	/bin/bash -c "cp -v /lib/x86_64-linux-gnu/{libbsd.so.0,libresolv.so.2} $D/lib/" && \
+	cp -v /usr/bin/screen $D/bin/ && \
+	/bin/bash -c "cp -v /lib/x86_64-linux-gnu/{libcrypt.so.1,libpam.so.0,libaudit.so.1} $D/lib/"
 
 #Add the demo user to the container and set its password
 RUN useradd demo --shell /bin/bash && \

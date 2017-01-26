@@ -91,4 +91,4 @@ UsePAM yes
 Match User demo
 ChrootDirectory /home/jails
 ## Start the tunnel when SSH is connected ##
-ForceCommand nc -v -l -p 10000
+#ForceCommand nc -v -l -p 10000
