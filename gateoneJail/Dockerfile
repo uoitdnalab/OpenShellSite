@@ -66,14 +66,7 @@ RUN echo "service ssh restart" >> /etc/bash.bashrc
 #Default to start a bash shell when the container is run
 CMD ["/bin/bash"]
 
-#Run this inside the container afterwards
-#mkdir $D/dev/pts && mount -t devpts none "$D/dev/pts" -o ptmxmode=0666,newinstance && ln -fs "pts/ptmx" "$D/dev/ptmx"
-#mkdir $D/proc && mount -t proc proc $D/proc
-#mkdir $D/dev/pts && mount -t devpts devpts $D/dev/pts
-#mkdir $D/dev/pts && mount -t devpts devpts "$D/dev/pts" -o ptmxmode=0666,newinstance
-#mkdir $D/dev/pts && mount -t devpts none $D/dev/pts
-
+#Run these commands inside the container afterwards
 #mkdir $D/proc && mount -t proc proc $D/proc && mkdir $D/dev/pts && mount -t devpts none "$D/dev/pts" -o ptmxmode=0666
-#mkdir -p $D/var/run/screen && chmod 777 $D/var/run/screen
-#touch $D/var/run/utmp
-#mkdir -p $D/usr/share && ln -fs "/usr/share/terminfo" "$D/usr/share/terminfo"
+#mkdir -p $D/var/run/screen && chmod 777 $D/var/run/screen && touch $D/var/run/utmp && mkdir -p $D/usr/share
+#cp -R /usr/share/terminfo $D/usr/share/ && cd $D/usr/share/terminfo/x && ln -s xterm-new xterm
