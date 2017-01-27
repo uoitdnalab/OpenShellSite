@@ -8,10 +8,12 @@ MAINTAINER dylan.kauling@uoit.net
 RUN apt-get update && apt-get install -y \
 	netcat \
 	openssh-server \
-	screen
+	screen \
+	xinetd \
+	telnetd
 
-#Expose port 2222 for SSH access to the jail and 10000 for the exploit tunnel
-EXPOSE 2222 10000
+#Expose port 2222 for SSH access to the jail, 23 for telnet, and 10000 for the exploit tunnel
+EXPOSE 23 2222 10000
 
 #Set an environment variable for the location of the jail
 ENV D /home/jails
