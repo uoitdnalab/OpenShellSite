@@ -23,6 +23,9 @@ RUN mkdir -p $D && \
 	mknod -m 666 $D/dev/tty c 5 0 && \
 	mknod -m 666 $D/dev/zero c 1 5 && \
 	mknod -m 666 $D/dev/random c 1 8 && \
+	mkdir $D/dev/pts && \
+	mount -t devpts none "$D/dev/pts" -o ptmxmode=0666,newinstance && \
+	ln -fs "pts/ptmx" "$D/dev/ptmx" && \
 	chown root:root $D && \
 	chmod 0755 $D && \
 	ls -ld $D && \
