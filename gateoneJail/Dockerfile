@@ -46,7 +46,9 @@ RUN cp -v /bin/bash $D/bin/ && \
 	cp -v /usr/bin/screen $D/bin/ && \
 	/bin/bash -c "cp -v /lib/x86_64-linux-gnu/{libcrypt.so.1,libpam.so.0,libaudit.so.1} $D/lib/" && \
 	cp -v /usr/bin/script $D/bin/ && \
-	/bin/bash -c "cp -v /lib/x86_64-linux-gnu/libutil.so.1 $D/lib/"
+	/bin/bash -c "cp -v /lib/x86_64-linux-gnu/libutil.so.1 $D/lib/" && \
+	cp -v /bin/su $D/bin/ && \
+	/bin/bash -c "cp -v /lib/x86_64-linux-gnu/{libpam_misc.so.0} $D/lib/"
 
 #Add the demo user to the container and set its password
 RUN useradd demo --shell /bin/bash && \
