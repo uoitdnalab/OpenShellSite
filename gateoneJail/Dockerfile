@@ -16,6 +16,9 @@ EXPOSE 2222 10000
 #Set an environment variable for the location of the jail
 ENV D /home/jails
 
+#Set an environment variable for the location of terminal stuff for screen
+ENV TERMINFO /usr/share/terminfo/
+
 #Make directories for the jail and prepare them for the script
 RUN mkdir -p $D && \
 	mkdir -p $D/dev/ && \
@@ -69,3 +72,8 @@ CMD ["/bin/bash"]
 #mkdir $D/dev/pts && mount -t devpts devpts $D/dev/pts
 #mkdir $D/dev/pts && mount -t devpts devpts "$D/dev/pts" -o ptmxmode=0666,newinstance
 #mkdir $D/dev/pts && mount -t devpts none $D/dev/pts
+
+#mkdir $D/proc && mount -t proc proc $D/proc && mkdir $D/dev/pts && mount -t devpts none "$D/dev/pts" -o ptmxmode=0666
+#mkdir -p $D/var/run/screen && chmod 777 $D/var/run/screen
+#touch $D/var/run/utmp
+#mkdir -p $D/usr/share && ln -fs "/usr/share/terminfo" "$D/usr/share/terminfo"
