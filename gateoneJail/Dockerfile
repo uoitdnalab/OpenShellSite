@@ -23,6 +23,7 @@ RUN mkdir -p $D && \
 	mknod -m 666 $D/dev/tty c 5 0 && \
 	mknod -m 666 $D/dev/zero c 1 5 && \
 	mknod -m 666 $D/dev/random c 1 8 && \
+	mknod -m 666 $D/dev/ptmx c 5 2 && \
 	chown root:root $D && \
 	chmod 0755 $D && \
 	ls -ld $D && \
@@ -64,5 +65,7 @@ CMD ["/bin/bash"]
 
 #Run this inside the container afterwards
 #mkdir $D/dev/pts && mount -t devpts none "$D/dev/pts" -o ptmxmode=0666,newinstance && ln -fs "pts/ptmx" "$D/dev/ptmx"
-#mkdir $D/proc && mkdir $D/dev/pts && mount -t proc proc $D/proc
-#mount -t devpts devpts $D/dev/pts
+#mkdir $D/proc && mount -t proc proc $D/proc
+#mkdir $D/dev/pts && mount -t devpts devpts $D/dev/pts
+#mkdir $D/dev/pts && mount -t devpts devpts "$D/dev/pts" -o ptmxmode=0666,newinstance
+#mkdir $D/dev/pts && mount -t devpts none $D/dev/pts
