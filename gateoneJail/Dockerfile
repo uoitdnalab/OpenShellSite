@@ -38,7 +38,9 @@ RUN cp -v /bin/bash $D/bin/ && \
 	cp -v /bin/nc $D/bin/ && \
 	/bin/bash -c "cp -v /lib/x86_64-linux-gnu/{libbsd.so.0,libresolv.so.2} $D/lib/" && \
 	cp -v /usr/bin/screen $D/bin/ && \
-	/bin/bash -c "cp -v /lib/x86_64-linux-gnu/{libcrypt.so.1,libpam.so.0,libaudit.so.1} $D/lib/"
+	/bin/bash -c "cp -v /lib/x86_64-linux-gnu/{libcrypt.so.1,libpam.so.0,libaudit.so.1} $D/lib/" && \
+	cp -v /usr/bin/script $D/bin/ && \
+	/bin/bash -c "cp -v /lib/x86_64-linux-gnu/libutil.so.1 $D/lib/"
 
 #Add the demo user to the container and set its password
 RUN useradd demo --shell /bin/bash && \
@@ -62,3 +64,5 @@ CMD ["/bin/bash"]
 
 #Run this inside the container afterwards
 #mkdir $D/dev/pts && mount -t devpts none "$D/dev/pts" -o ptmxmode=0666,newinstance && ln -fs "pts/ptmx" "$D/dev/ptmx"
+#mkdir $D/proc && mkdir $D/dev/pts && mount -t proc proc $D/proc
+#mount -t devpts devpts $D/dev/pts
