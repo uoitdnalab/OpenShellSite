@@ -88,9 +88,9 @@ Subsystem sftp /usr/lib/openssh/sftp-server
 UsePAM yes
 
 ## Apply the chrooted jail to the user called demo ##
-Match User demo
-ChrootDirectory /home/jails
+#Match User demo
+#ChrootDirectory /home/jails
 ## Start the tunnel when SSH is connected ##
 #ForceCommand nc -v -l -p 10000
 ## Instead start the script to allow screen to run instead
-ForceCommand script /dev/null
+#ForceCommand script /dev/null
