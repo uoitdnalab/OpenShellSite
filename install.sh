@@ -18,7 +18,7 @@ sudo docker cp --follow-link /etc/letsencrypt/live/wallpaper.nextproject.ca/priv
 
 cd ~/WallpaperExploitSite/gateoneJail
 sudo docker build -t gateone_jail .
-sudo docker run -itd --name=Gateone_Jail -p 23:23 -p 2222:2222 -p 10000:10000 -p 10001:10001 -p 10002:10002 -p 10003:10003 -p 10004:10004 -p 10005:10005 -p 10006:10006 -p 10007:10007 -p 10008:10008 -p 10009:10009--restart=always --privileged gateone_jail
+sudo docker run -itd --name=Gateone_Jail -p 23:23 -p 2222:2222 -p 10000:10000 -p 10001:10001 -p 10002:10002 -p 10003:10003 -p 10004:10004 -p 10005:10005 -p 10006:10006 -p 10007:10007 -p 10008:10008 -p 10009:10009 --restart=always --privileged gateone_jail
 
 cd ~/WallpaperExploitSite/ftp_server
 sudo docker build -t ftp_server .

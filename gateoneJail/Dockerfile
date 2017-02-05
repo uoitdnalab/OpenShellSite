@@ -18,8 +18,16 @@ RUN useradd demo --shell /bin/bash && \
 	/bin/bash -c "chpasswd <<< "demo:demopassword"" && \
 	passwd -n 10000 demo
 
+#CCreate a home directory for the new user
+RUN mkdir -p /home/demo/ && \
+	chown -R demo:demo /home/demo/ && \
+	chmod -R 0700 /home/demo/
+
 #Copy over the pre-configured SSH config file with the port changed to 2222
 COPY sshd_config /etc/ssh/sshd_config
+
+#Copy over the pre-configured bash profile to launch netcat listeners automatically
+COPY .bash_profile /home/demo/.bash_profile
 
 #Set bash to restart the ssh server when the container is started
 RUN echo "service ssh restart" >> /etc/bash.bashrc
