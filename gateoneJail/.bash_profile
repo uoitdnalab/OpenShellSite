@@ -5,6 +5,6 @@ do
       continue
    else
       screen -S $PORT -dm nc -v -l -p $PORT
-      screen -S $PORT -p 0 -X stuff $'Connected\r'
+      screen -S $PORT -p 0 -X stuff $'echo ConnectedToListener\r'
    fi
 done
