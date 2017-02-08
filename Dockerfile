@@ -18,7 +18,7 @@ COPY default-ssl.conf /etc/apache2/sites-available/default-ssl.conf
 RUN a2ensite default-ssl.conf
 
 #Make directory for the certificate and key
-RUN mkdir -p /etc/letsencrypt/live/wallpaper.nextproject.ca
+RUN mkdir -p /etc/letsencrypt/live/openshell.nextproject.ca
 
 #Copy the site over to the web directory
 COPY ./public_html/ /var/www/html/
@@ -35,17 +35,17 @@ CMD ["/bin/bash"]
 # docker run -d -p 80:80 -v /var/run/docker.sock:/tmp/docker.sock:ro jwilder/nginx-proxy
 
 # Docker
-# docker build -t "wallpaper_site" .
-# docker run -itd -e VIRTUAL_HOST=wallpaperexploit.ddns.net -p 443:443 --name Wallpaper_Site wallpaper_site:latest
-# docker cp --follow-link /etc/letsencrypt/live/wallpaperexploit.ddns.net/cert.pem Wallpaper_Site:/etc/letsencrypt/live/wallpaperexploit.ddns.net/cert.pem
-# docker cp --follow-link /etc/letsencrypt/live/wallpaperexploit.ddns.net/privkey.pem Wallpaper_Site:/etc/letsencrypt/live/wallpaperexploit.ddns.net/privkey.pem
-# docker cp --follow-link /etc/letsencrypt/live/wallpaperexploit.ddns.net/chain.pem Wallpaper_Site:/etc/letsencrypt/live/wallpaperexploit.ddns.net/chain.pem
+# docker build -t "openshell_site" .
+# docker run -itd -e VIRTUAL_HOST=wallpaperexploit.ddns.net -p 443:443 --name OpenShell_Site wallpaper_site:latest
+# docker cp --follow-link /etc/letsencrypt/live/openshell.nextproject.ca/cert.pem Wallpaper_Site:/etc/letsencrypt/live/openshell.nextproject.ca/cert.pem
+# docker cp --follow-link /etc/letsencrypt/live/openshell.nextproject.ca/privkey.pem Wallpaper_Site:/etc/letsencrypt/live/openshell.nextproject.ca/privkey.pem
+# docker cp --follow-link /etc/letsencrypt/live/openshell.nextproject.ca/chain.pem Wallpaper_Site:/etc/letsencrypt/live/openshell.nextproject.ca/chain.pem
 # docker exec Wallpaper_Site service apache2 start
 
 # mkdir -p /var/nginx-proxy/certs
-# openssl x509 -outform der -in /etc/letsencrypt/live/wallpaperexploit.ddns.net/cert.pem -out /var/nginx-proxy/certs/wallpaperexploit.ddns.net.crt
-# openssl rsa -outform der -in /etc/letsencrypt/live/wallpaperexploit.ddns.net/privkey.pem -out /var/nginx-proxy/certs/wallpaperexploit.ddns.net.key
+# openssl x509 -outform der -in /etc/letsencrypt/live/openshell.nextproject.ca/cert.pem -out /var/nginx-proxy/certs/openshell.nextproject.ca.crt
+# openssl rsa -outform der -in /etc/letsencrypt/live/openshell.nextproject.ca/privkey.pem -out /var/nginx-proxy/certs/openshell.nextproject.ca.key
 
-# docker run -itd -e VIRTUAL_HOST=wallpaperexploit.ddns.net --name Wallpaper_Site wallpaper_site:latest
-# docker run -itd -e VIRTUAL_HOST=wallpaperexploit.ddns.net -e VIRTUAL_PROTO=https -e VIRTUAL_PORT=443 --name Wallpaper_Site wallpaper_site:latest
+# docker run -itd -e VIRTUAL_HOST=openshell.nextproject.ca --name OpenShell_Site openshell_site:latest
+# docker run -itd -e VIRTUAL_HOST=openshell.nextproject.ca -e VIRTUAL_PROTO=https -e VIRTUAL_PORT=443 --name OpenShell_Site openshell_site:latest
 # docker run -d -p 80:80 -p 443:443 -v /var/nginx-proxy/certs:/etc/nginx/certs -v /var/run/docker.sock:/tmp/docker.sock:ro --name Nginx_Proxy jwilder/nginx-proxy

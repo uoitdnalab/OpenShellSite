@@ -155,7 +155,11 @@ a img{
   width: auto;
   background-color: #f3f3f3;
   background-size: cover;
-  padding-bottom: 80px;
+  padding-bottom: 10px;
+}
+
+.about-section p {
+  font-size: 18px;
 }
 
 .logo-font {
@@ -214,17 +218,17 @@ a img{
 .demo-section {
   text-align: center;
   position: relative;
-  top: -40px;
 }
 
 .demo-section-text {
   margin-left: auto;
   margin-right: auto;
-  padding: 100px 16px 25px 16px;
+  padding: 10px 16px 25px 16px;
 }
 
   .demo-section-text p {
     padding-top: 16px;
+	font-size: 18px;
   }
 
 .downloads-section {
@@ -234,27 +238,46 @@ a img{
 .downloads-section-text {
   margin-left: auto;
   margin-right: auto;
-  padding: 50px 16px 0 16px;
+  padding: 0px 16px 0 16px;
 }
 
 .downloads-section-text p {
   padding-top: 16px;
+  font-size: 18px;
+}
+
+.citation-section {
+  text-align: center;
+  margin-bottom: 10px;
+  padding: 10px 16px 10px 16px;
+}
+
+.citation-section-text {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 16px 0 16px;
+}
+
+.citation-section-text p {
+  padding-top: 16px;
+  font-size: 18px;
 }
 
 .contact-section {
   text-align: center;
-  margin-bottom: 50px;
-  padding: 80px 16px 50px 16px;
+  margin-bottom: 10px;
+  padding: 10px 16px 10px 16px;
 }
 
 .contact-section-text {
   margin-left: auto;
   margin-right: auto;
-  padding: 50px 16px 0 16px;
+  padding: 10px 16px 0 16px;
 }
 
 .contact-section-text p {
   padding-top: 16px;
+  font-size: 18px;
 }
 
 .android-footer {
