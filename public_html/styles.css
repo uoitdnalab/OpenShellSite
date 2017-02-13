@@ -20,7 +20,7 @@ body {
 
 /* Disable ugly boxes around images in IE10 */
 a img{
-  border: 0px;
+  border: 0;
 }
 
 ::-moz-selection {
@@ -33,34 +33,6 @@ a img{
   color: #fff;
 }
 
-.android-search-box .mdl-textfield__input {
-  color: rgba(0, 0, 0, 0.87);
-}
-
-.android-header .mdl-menu__container {
-  z-index: 50;
-  margin: 0 !important;
-}
-
-
-.mdl-textfield--expandable {
-  width: auto;
-}
-
-.android-fab {
-  position: absolute;
-  right: 20%;
-  bottom: -26px;
-  z-index: 3;
-  background: #64ffda !important;
-  color: black !important;
-}
-
-.android-mobile-title {
-  display: none !important;
-}
-
-
 .menu-logo-image {
   width: 200px;
   height: auto;
@@ -72,13 +44,9 @@ a img{
   background-color: white;
 }
 
-.android-header .material-icons {
-  color: #767777 !important;
-}
-
 .android-header .mdl-layout__drawer-button {
-  background: transparent;
-  color: #767777;
+    background: transparent;
+    color: #767777;
 }
 
 .android-header .mdl-navigation__link {
@@ -145,11 +113,6 @@ a img{
   height: 120px;
 }
 
-.android-drawer .android-logo-image {
-  position: absolute;
-  bottom: 16px;
-}
-
 .about-section {
   position: relative;
   width: auto;
@@ -179,10 +142,6 @@ a img{
   padding-top: 24px;
 }
 
-.android-image-link {
-  text-decoration: none;
-}
-
 /* Links on the page */
 .android-link {
   text-decoration: none;
@@ -192,27 +151,6 @@ a img{
 /* Links on the page when hovered over */
 .android-link:hover {
   color: #003C71 !important;
-}
-
-.android-link .material-icons {
-  position: relative;
-  top: -1px;
-  vertical-align: middle;
-}
-
-.android-alt-link {
-  text-decoration: none;
-  color: #64ffda !important;
-  font-size: 16px;
-}
-
-.android-alt-link:hover {
-  color: #00bfa5 !important;
-}
-
-.android-alt-link .material-icons {
-  position: relative;
-  top: 6px;
 }
 
 .demo-section {
@@ -231,6 +169,38 @@ a img{
   font-size: 18px;
 }
 
+.advanced-section {
+  text-align: center;
+  position: relative;
+}
+
+.advanced-section-text {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 16px 25px 16px;
+}
+
+.advanced-section-text p {
+  padding-top: 16px;
+  font-size: 18px;
+}
+
+.developers-section {
+  text-align: center;
+  position: relative;
+}
+
+.developers-section-text {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 16px 25px 16px;
+}
+
+.developers-section-text p {
+  padding-top: 16px;
+  font-size: 18px;
+}
+
 .downloads-section {
   text-align: center;
 }
@@ -238,7 +208,7 @@ a img{
 .downloads-section-text {
   margin-left: auto;
   margin-right: auto;
-  padding: 0px 16px 0 16px;
+  padding: 0 16px 0 16px;
 }
 
 .downloads-section-text p {
@@ -280,41 +250,13 @@ a img{
   font-size: 18px;
 }
 
-.android-footer {
-  background-color: #fafafa;
-  position: relative;
-}
-
 .android-footer a:hover {
   color: #8bc34a;
-}
-
-.android-footer .mdl-mega-footer--top-section::after {
-  border-bottom: none;
-}
-
-.android-footer .mdl-mega-footer--middle-section::after {
-  border-bottom: none;
-}
-
-.android-footer .mdl-mega-footer--bottom-section {
-  position: relative;
 }
 
 .android-footer .mdl-mega-footer--bottom-section a {
   margin-right: 2em;
 }
-
-.android-footer .mdl-mega-footer--right-section a .material-icons {
-  position: relative;
-  top: 6px;
-}
-
-
-.android-link-menu:hover {
-  cursor: pointer;
-}
-
 
 /**** Mobile layout ****/
 @media (max-width: 900px) {
@@ -322,27 +264,10 @@ a img{
     display: none;
   }
 
-  .android-title {
-    display: none !important;
-  }
-
-  .android-mobile-title {
-    display: block !important;
-    position: absolute;
-    left: calc(50% - 70px);
-    top: 12px;
-    transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  /* WebViews in iOS 9 break the "~" operator, and WebViews in OS X 10.10 break
+    /* WebViews in iOS 9 break the "~" operator, and WebViews in OS X 10.10 break
      consecutive "+" operators in some cases. Therefore, we need to use both
      here to cover all the bases. */
-  .android.android-search-box.is-focused ~ .android-mobile-title,
-  .android-search-box.is-focused + .android-navigation-container + .android-mobile-title {
-    opacity: 0;
-  }
-
-  .about-section {
+    .about-section {
     top: -105px;
     height: 350px;
     padding-bottom: 25px;
@@ -360,9 +285,6 @@ a img{
     padding-top: 8px;
   }
 
-  .android-footer .mdl-mega-footer--bottom-section {
-    display: none;
-  }
 }
 
 #dylanmail b {

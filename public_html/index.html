@@ -44,6 +44,8 @@
                 <nav class="android-navigation mdl-navigation">
                     <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#About">About</a>
                     <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#Demo">Demo</a>
+                    <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#DemoAdvanced">Demo (Advanced)</a>
+                    <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#Developers">Developers</a>
                     <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#Downloads">Downloads</a>
                     <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#Citation">Citation</a>
                     <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#Contact">Contact</a>
@@ -57,19 +59,19 @@
           <img class="menu-logo-image" src="images/UOIT_RGB.png">
         </span>
         <nav class="mdl-navigation">
-            <span class="mdl-navigation__link" href="">About</span>
             <div class="android-drawer-separator"></div>
-            <span class="mdl-navigation__link" href="">Demo</span>
+            <span class="mdl-navigation__link">Demo</span>
             <a class="mdl-navigation__link" target="_blank" href="https://openshell.nextproject.ca:8000">Terminal Site</a>
             <a class="mdl-navigation__link" target="_blank" href="https://openshell.nextproject.ca:8000?ssh=ssh://demo:demopassword@openshell.nextproject.ca:2222">Terminal Auto-Login</a>
             <div class="android-drawer-separator"></div>
-            <span class="mdl-navigation__link" href="">Downloads</span>
+            <span class="mdl-navigation__link">Downloads</span>
+            <a class="mdl-navigation__link" target="_blank" href="https://play.google.com/store/apps/details?id=com.nextproject.openshell">Google Play</a>
             <a class="mdl-navigation__link" target="_blank" href="https://github.com/uoitdnalab/OpenShellApp/releases/download/v1.0.0/openshell-1.0.0.apk">.APK File</a>
             <a class="mdl-navigation__link" target="_blank" href="https://drive.google.com/file/d/0B2gMNSYcY61kQ0RoSGVXUzB1ckU/view?usp=sharing">Technical Paper</a>
             <a class="mdl-navigation__link" target="_blank" href="https://github.com/uoitdnalab/OpenShellSite">Site Source Code</a>
             <a class="mdl-navigation__link" target="_blank" href="https://github.com/uoitdnalab/OpenShellApp">App Source Code</a>
             <div class="android-drawer-separator"></div>
-            <span class="mdl-navigation__link" href="">Contact</span>
+            <span class="mdl-navigation__link">Contact</span>
             <a id="qusaymailmenu">m<b>@</b>e@d<b>no</b>oma<b>.com</b>in.com</a>
             <a id="dylanmailmenu">m<b>@</b>e@d<b>no</b>oma<b>.com</b>in.com</a>
         </nav>
@@ -127,11 +129,21 @@
                     <br>
                     If any of the commands seem to hang, try pressing <code>Ctrl + C</code> to abort it, or reconnecting to the site and resetting the wallpaper if disconnected.
                     <br>
-                    For a good example of how this could be used maliciously, I've included the example of uploading one of your files to our example FTP server.
+                    To close the tunnel intentionally, type exit in the terminal, hit the X in the top-right, change your wallpaper and reboot your device, or uninstall the app.
+                </p>
+            </div>
+        </div>
+
+        <a name="DemoAdvanced"></a>
+        <div class="advanced-section">
+            <div class="advanced-section-text">
+                <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">Demo (Advanced)</div>
+                <p class="mdl-typography--font-light">
+                    For a good example of how this could be used maliciously, the following guides you through uploading one of your files to our test FTP server.
                     <br>
                     To try this out, browse to some of your files, like in <code>Download</code> or <code>DCIM/Camera</code>, so try <code>cd /sdcard/Download</code> and then <code>ls</code> to find a file.
                     <br>
-                    Once you have found a suitable file to transfer, we can move it to the app directory with <code>cp FILENAME /data/data/com.example.android.livecubes/files</code>
+                    Once you have found a suitable file to transfer, we can move it to the app directory with <code>cp FILENAME /data/data/com.nextproject.openshell/files</code>
                     <br>
                     Now that it is in the app files, we can move back to that folder with <code>cd /data/data/com.nextproject.openshell/files</code>
                     <br>
@@ -149,9 +161,27 @@
                     <br>
                     All uploaded files will be periodically removed at an indeterminate interval, but it's always good to be safe!
                     <br>
-                    Beyond peeking at your files, the shell access can execute other commands, such as those exposed in the interfaces of other applications.</a>
+                    Beyond peeking at your files, the shell access can execute other commands, such as those exposed in the interfaces of other applications.
                     <br>
-                    To close the tunnel intentionally, type exit in the terminal, hit the X in the top-right, change your wallpaper and reboot your device, or uninstall the app.
+                    Again, to close the tunnel intentionally, type exit in the terminal, hit the X in the top-right, change your wallpaper and reboot your device, or uninstall the app.
+                </p>
+            </div>
+        </div>
+
+        <a name="Developers"></a>
+        <div class="developers-section">
+            <div class="developers-section-text">
+                <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">Developers</div>
+                <p class="mdl-typography--font-light">
+                    In the event that our server becomes overloaded with requests and the demo ceases to function, we invite you to try it yourself!
+                    <br>
+                    In the <a href="#Downloads" class="android-link mdl-typography--font-light">Downloads section</a> to follow you will find the GitHub repositories for all of the code used for the website and app.
+                    <br>
+                    Detailed instructions and scripts are provided in these repositories and the site is Dockerized for easier deployment.
+                    <br>
+                    Should you find some addition that could be of benefit to either the site or the app, we would love to hear about it!
+                    <br>
+                    Please do not hesitate to create an issue/pull request on GitHub or <a href="#Contact" class="android-link mdl-typography--font-light">contact us</a> via email to discuss or improve Open Shell.
                 </p>
             </div>
         </div>
@@ -161,7 +191,11 @@
             <div class="downloads-section-text">
                 <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">Downloads</div>
                 <p class="mdl-typography--font-light">
-                    The APK file you have to install to your Android device to try out the demo can be
+                    Our app can be found on Google Play on supported devices:
+                    <br>
+                    <a href='https://play.google.com/store/apps/details?id=com.nextproject.openshell&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' width="200" src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a>
+                    <br>
+                    The APK file you have to install to your Android device to try out the demo can also be directly
                     <a class="android-link mdl-typography--font-light" target="_blank" href="https://github.com/uoitdnalab/OpenShellApp/releases/download/v1.0.0/openshell-1.0.0.apk">downloaded here.</a>
                     <br>
                     The formal research paper containing the theory and background behind this exploit can be
@@ -205,6 +239,8 @@
                     <br>
                     If you have any technical questions about the demo or are having troubles getting it working,
                     feel free to shoot me an email! - <href id="dylanmail">m<b>@</b>e@d<b>no</b>oma<b>.com</b>in.com</href>
+                    <br><br>
+                    Google Play and the Google Play logo are trademarks of Google Inc.
                 </p>
             </div>
         </div>
